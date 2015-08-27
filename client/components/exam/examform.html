@@ -1,0 +1,72 @@
+<div class="whitepaper-bg">
+	
+	<div class="intro-text-hldr">
+      <h1 style="color:black;">Welcome, {{loggedDetails.name}}</h1>
+       <p>Please register the student that you'll be evaluating.</p>
+	</div>
+	
+	<div class="login-signup-hldr">
+		<div class="container-fluid">
+			<div class="formhldr">
+			<form autocomplete="off" class="demo" ng-submit="login(form)" novalidate>
+				<div class="row">
+						 <div class="col-xs-4">
+						 	<input placeholder="Student&nbsp;&nbsp;First&nbsp;&nbsp;Name" type="text" name="fname" class="form-control" ng-model="form.fname">
+						 </div>
+						 <div class="col-xs-4">
+						 	<input placeholder="Student&nbsp;&nbsp;Last&nbsp;&nbsp;Name" type="text" name="lname" class="form-control" ng-model="form.lname">
+						 </div>
+						 <div class="col-xs-2">
+							<select ng-model="form.semester" ng-options="semi for semi in formArray[0].semester">
+								<option value="">Semester</option>
+							</select>
+						</div>
+						 <div class="col-xs-2"style="color:white;margin-top:10px;">{{formArray[0].date | date : 'M/dd/yyyy'}}
+						 </div>
+				</div>
+
+				<div class="row">
+						<div class="col-xs-4">
+							<select ng-model="form.exam.procedure" ng-options="exam.procedure as exam.procedure group by exam.region for exam in formArray[0].exam">
+								<option value = "">Examination</option>
+								</select> 
+						</div>
+						<div class="col-xs-4"><input placeholder="Clinical Site" type="text" name="fname" class="form-control" ng-model="form.site"></div>
+						<div class="col-xs-2">
+							<select ng-model="form.year" ng-options="year for year in formArray[0].year">
+								<option value = "">Year</option>
+							</select>
+						</div>
+						<div class="col-xs-2"><input placeholder="MR #" type="text" name="fname" class="form-control" ng-model="form.mrn"></div>	
+				</div>
+
+				<div class="row">
+						<div class="col-xs-4">
+							<select ng-model="form.compType" ng-options="competency  for competency in formArray[0].compType">
+								<option value = "">Competency Type</option>
+							</select>
+						</div>
+						<div class="col-xs-4">
+							<select ng-model="form.pType" ng-options="patient for patient in formArray[0].pType">
+								<option value = "">Patient Type</option>
+							</select>
+						</div>
+						<div class="col-xs-2">
+							<select ng-model="form.gender" ng-options="sex for sex in formArray[0].gender">
+								<option value = "">Gender</option>
+							</select>
+						</div>
+				</div>
+
+				<div class="row">
+						<button ng-click="formSubmit(form)" class="btn btn-lg btn-secondary"> BEGIN</button>
+				</div>
+				<pre>{{form | json}}</pre>
+			</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+

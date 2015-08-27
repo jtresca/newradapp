@@ -1,0 +1,52 @@
+<div class="whitepaper-bg">
+	<div class="intro-text-hldr">
+		<h1 style="color:black;">Welcome, {{loggedDetails.name}}</h1>
+		<p>Begin grading the student here.</p>
+	</div>
+	<div class="login-signup-hldr">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Student assessment of <span id="h2bold" class="h2bold">{{formreturn.fname}}&nbsp;{{formreturn.lname}}</span> on <span class="h2bold">{{formreturn.date | date : 'longDate'}}</span></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-5">
+					<h2><span class="h2bold">{{formreturn.exam.procedure | uppercase}}</span> EVALUATION</h2>
+				</div>
+				<div class="col-xs-7">
+					<h2><span class="h2bold" ng-init="valAdd=0">CURRENT SCORE:</span> {{valAdd}} </h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="cat">{{SortedGradeList[itteration].cat}}</div><div class="midpointarrow"><div class="arrow-right"></div></div><div class="subcat">{{SortedGradeList[itteration].subcat}}</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3" ng-repeat="rating in SortedGradeList[itteration].rating">
+					<div class="gradeoption" ng-click="examButtons(rating.ratename,rating.score)" ng-class="{gradehighlight : idname === rating.ratename }" >
+						
+						<div class="gradeoptiontext" >
+							{{rating.ratename}}<br>
+							<span class="largescore">{{rating.score}}</span><span>pts.</span>
+						</div>
+						
+						<div class="bottompointarrow">
+							<div class="arrow-down" ng-click="examButtons(rating.ratename)" ng-class="{highdownarrow : idname === rating.ratename }"></div>
+						</div>
+						
+						<div class="gradeoptiondesc">
+							{{rating.desc}}
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<button class="btn btn-lg btn-back" ng-click="prevBTN()" ng-hide="isFirstExam()">BACK</button>
+					<button class="btn btn-lg btn-next" ng-click="nextBTN()">NEXT</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

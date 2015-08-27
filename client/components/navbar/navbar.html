@@ -1,0 +1,21 @@
+<header class="header" ng-controller="NavbarCtrl">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <div id="logo"></div>
+    </div>
+    <div class="col-xs-8">
+      <ul class="modern-nav pull-right">
+        <!-- Before User is Signed in -->
+         <li ng-hide="isLoggedIn()" ng-class="{isactive: isActive('/login')}"><a href="/login">LOGIN</a></li>
+         <!-- <li ng-hide="currentUser" ng-class="{isactive: isActive('/signup')}"><a href="/signup">SIGN UP</a></li> -->
+        <!-- Logged IN ng-repeat -->
+        <li ng-show="isLoggedIn()" ng-repeat="item in menu" ng-class="{isactive: isActive(item.link)}">
+        <a ng-href="{{item.link}}">{{item.title}}</a>
+        </li>
+        <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">LOGOUT</a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>  
+</header>

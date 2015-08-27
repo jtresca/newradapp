@@ -1,0 +1,518 @@
+@import "../../assets/styles/fonts";
+@import "../../assets/styles/colors";
+// @import 'bootstrap/dist/css/bootstrap.css';
+
+h1 {
+   padding-bottom: 5px;
+   margin: 0px;
+   font-family: "font_35","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-size: 22pt;
+   color: white;
+   letter-spacing: 2px;
+}
+
+h2 {
+    font-family: "font_25","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 14pt;
+}
+
+.h2bold {
+   font-family:"font_55","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   color: white;
+   letter-spacing: 1px;
+}
+#h2bold {
+    text-transform: capitalize;
+}
+
+.bg-image p {
+   font-family:"font_35","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   color: white;
+   letter-spacing: 1px;
+}
+
+label {
+    color: white;
+}
+
+.btn-primary  {
+    color: @darkblue !important;
+    background-color: @lightblue !important;
+    border-radius: 0px !important;
+    font-size: 11px !important;
+    margin-bottom: 20px !important;
+    border-width: 0px !important;
+}
+
+.btn-secondary  {
+    color: white !important;
+    background-color: @darkblue !important;
+    border-radius: 0px !important;
+    font-size: 11px !important;
+    margin-bottom: 20px !important;
+    border-width: 1px !important;
+    border-color: white;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.btn-back  {
+    color: white !important;
+    background-color: @darkblue !important;
+    border-radius: 0px !important;
+    font-size: 11px !important;
+    margin-bottom: 20px !important;
+    border-width: 1px !important;
+    border-color: white;
+}
+
+.btn-next  {
+    color: white !important;
+    background-color: @darkblue !important;
+    border-radius: 0px !important;
+    font-size: 11px !important;
+    margin-bottom: 20px !important;
+    border-width: 1px !important;
+    border-color: white;
+    margin-left: 10px;
+}
+
+
+input {
+    background: none !important;
+    border-color: white !important;
+    border-radius: 0px !important;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    color: white !important;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+
+}
+
+form span {
+    color: white;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    font-size: 11px;
+}
+
+option {
+    color: white !important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0px 1000px @darkblue inset;
+   -webkit-color: white;
+}
+
+::-webkit-input-placeholder {
+ font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ font-size: 15px;
+ color: @lightblue!important;
+ text-align: left;
+}
+:-moz-placeholder { /* older Firefox*/
+ font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ font-size: 15px;
+ color: @lightblue!important;
+ text-align: left;
+}
+::-moz-placeholder { /* Firefox 19+ */ 
+ font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ font-size: 15px;
+ color: @lightblue!important;
+ text-align: left;
+} 
+:-ms-input-placeholder { 
+ font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ font-size: 15px;
+ color: @lightblue!important;
+ text-align: left;
+}
+
+.formhldr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.demo select {
+    -webkit-appearance: none !important; 
+    -moz-appearance: none !important;
+    background: url('../../assets/images/downarrow.svg') no-repeat 90% center!important;
+    background-size: 20px 30px;
+    width: 100% !important; 
+    text-indent: 6.5px !important; 
+    text-overflow: "" !important;
+    color: @lightblue !important;
+    border-radius: 0px !important;
+    border-color: white;
+    background-color: none;
+    margin-top: 3px!important;
+    padding: 5px !important;
+     border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.demo .special input {
+    -webkit-appearance: none !important; 
+    -moz-appearance: none !important;
+    background: url('../../assets/images/downarrow.svg') no-repeat 90% center!important;
+    background-size: 20px 30px;
+    width: 100% !important; 
+    text-indent: 6.5px !important; 
+    text-overflow: "" !important;
+    color: @lightblue !important;
+    border-radius: 0px !important;
+    border-color: white;
+    background-color: none;
+    margin-top: 3px!important;
+    padding: 5px !important;
+     border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-width: 1px !important;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.whitepaper-bg {
+    width: 100%;
+    margin-top: -30px;
+    background: white;
+    min-height: 730px;
+}
+
+.whitepaper-bg .login-signup-hldr {
+    background: @darkblue;
+    margin: auto;
+    width: 80%;
+    border-top: 5px solid @lightblue;
+    margin-top: 40px;
+}
+
+/* Main Background Image*/
+
+.bg-image {
+    margin-top: -30px;
+    background-image: url('../../assets/images/rad_bg.jpg');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    width: 100%;
+    max-width: 1920px;
+    min-height: 730px; 
+}
+
+
+.intro-text-hldr {
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 50px;
+}
+
+.login-signup-hldr {
+    background: @darkblue;
+    margin: auto;
+    width: 60%;
+    border-top: 5px solid @lightblue;
+    margin-top: 40px;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+ul {
+        list-style-type: none;
+        margin: 0;
+        padding-right: 3em;
+}
+
+#logo {
+   background-image: url("../../assets/images/logo.svg");
+   background-repeat:no-repeat;
+   display: block;
+   position: absolute;
+   background-size:60%;
+   height: 40px;
+   min-width: 500px;
+   margin-top: 3.8em !important;
+   margin-left: 30px;
+}
+
+.modern-nav { 
+
+    padding-top: 4.7em;
+    
+    a {
+        display: inline;
+        width: 130px;
+        color:@graylink;
+        padding: 10px;
+    } 
+
+     a:hover {
+        text-decoration: none;
+    } 
+
+    li {
+        float: left;
+        padding-left: .25em;
+    } 
+
+}
+
+.isactive a{
+    padding: 10px; 
+    color: white;
+    background: @midblue;
+}
+
+/* TEST ITSELF */
+
+.cat {
+    background: @lightblue;
+    padding: 15px;
+    width: 47%;
+    float: left;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.midpointarrow {
+    background: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 3%;
+    float: left;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 12px solid @lightblue;
+}
+
+.bottompointarrow {
+    background: white;
+    width: 100%;
+    padding: 0px;
+    height: 12px;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 12px solid @lightblue;
+    margin: auto;
+}
+
+.gradeoption {
+    background-color: @lightblue;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    cursor: pointer;
+    color: @darkblue;
+    border-top: 3px solid @lightblue !important;
+}
+
+.highdownarrow {
+    width: 0 !important; 
+    height: 0!important;  
+    border-left: 15px solid transparent!important; 
+    border-right: 15px solid transparent!important; 
+    border-top: 12px solid @graylink!important;
+    margin: auto!important;
+    color: red !important;
+}
+
+.gradehighlight {
+    color:white!important;
+    background:@graylink!important;
+    border-top: 3px solid #e5e5e5 !important;
+}
+
+.gradeoptiontext {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+ 
+    font-size: 1.25em;
+    font-style: bolder;
+    font-family:"font_55","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.largescore {
+    font-size: 3em;
+    color: white;
+    padding-right: 2px;
+    font-family:"font_55","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.gradeoptiondesc {
+    letter-spacing:.1em;
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    background: white;
+    color: black;
+    font-size: .75em;
+    font-family:"font_45","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.subcat {
+    background: white;
+    padding: 15px;
+    width: 50%;
+    float: left;
+    font-size: 1.2em;
+    font-family:"font_25","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: @darkblue;
+    letter-spacing: 2px;
+}
+
+
+
+/* Space out content a bit */
+body {
+    background: black;
+    // overflow:hidden; 
+    //TURN BACK ON TO REMOVE SCROLLING
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Custom page header */
+.header {
+    font-size: .80em;
+    height: 120px;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+
+
+/* Custom page footer */
+.footer-text {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: .75em;
+    text-align: center;
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    margin-top: 20px;
+    height: 75px;
+    width: 100%;
+    color: #777;
+    background-color: black;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /*
+     .container {
+         max-width: 900px;
+     }
+*/
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+/* ng-view Fade effects, once ng-animate is in place. 
+
+.fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.fade.ng-enter,
+.fade.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.fade.ng-enter {
+    opacity: 0;
+}
+.fade.ng-enter-active {
+    opacity: 1;
+}
+.fade.ng-leave {
+    opacity: 1;
+}
+.fade.ng-leave-active {
+    opacity: 0;
+}
+*/
