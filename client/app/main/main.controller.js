@@ -17,6 +17,24 @@ angular.module('radAppApp')
     $scope.itteration = 0;
     $scope.studentScore = [];
     $scope.wasHit = false;
+    $scope.isDevMode = true;
+            
+            $scope.preFillDemo = function() {
+                $scope.form = {};
+                $scope.form.fname = 'John';
+                $scope.form.lname = 'Doe';
+                $scope.form.semester = 'Q1';
+                $scope.form.exam = { 'procedure': 'Chest Routine'};
+                $scope.form.site = 'Brookhaven Memorial Hospital';
+                $scope.form.year = 'Junior';
+                $scope.form.mrn = 345235;
+                $scope.form.compType = 'Initial';
+                $scope.form.pType = 'Adult';
+                $scope.form.gender = 'Male';
+
+            }
+
+
 
             $scope.examButtons = function(id, score) {
                 // console.log("id is:",id);

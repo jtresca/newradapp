@@ -61,7 +61,10 @@
 				<div class="row">
 						<button ng-click="formSubmit(form)" class="btn btn-lg btn-secondary"> BEGIN</button>
 				</div>
-				<pre>{{form | json}}</pre>
+				<section ng-if="isDevMode">
+					<pre>{{form | json}}</pre>
+					<button ng-click="preFillDemo()" class="btn btn-lg btn-secondary">DEV PREFILL</button>
+				</section>
 			</form>
 			</div>
 		</div>
