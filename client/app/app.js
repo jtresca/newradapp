@@ -7,7 +7,7 @@ angular.module('radAppApp', [
   'ngRoute',
   'ui.bootstrap'
 ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider) {
+  .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/login', {
         templateUrl: 'app/account/login/login.html',
@@ -43,7 +43,7 @@ angular.module('radAppApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
-  })
+  }])
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {

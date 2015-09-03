@@ -1,7 +1,9 @@
 @import "fonts";
 @import "colors";
 // @import 'bootstrap/dist/css/bootstrap.css';
-
+html, body {
+  overflow-x: hidden;
+}
 h1 {
    padding-bottom: 5px;
    margin: 0px;
@@ -204,7 +206,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-size: 100%;
     width: 100%;
     max-width: 1920px;
-    min-height: 730px; 
 }
 
 
@@ -239,11 +240,11 @@ ul {
    background-image: url("../images/logo.svg");
    background-repeat:no-repeat;
    display: block;
-   position: absolute;
-   background-size:60%;
+   position: relative;
+   // background-size:60%;
    height: 40px;
    min-width: 500px;
-   margin-top: 3.8em !important;
+   margin-top: 30px;
    margin-left: 30px;
 }
 
@@ -386,11 +387,6 @@ ul {
 
 
 /* Space out content a bit */
-body {
-    background: black;
-    // overflow:hidden; 
-    //TURN BACK ON TO REMOVE SCROLLING
-}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -433,7 +429,7 @@ body {
     bottom: 0;
     padding: 20px;
     margin-top: 20px;
-    height: 75px;
+    height: 20px;
     width: 100%;
     color: #777;
     background-color: black;
@@ -486,33 +482,3 @@ body {
         border-bottom: 0;
     }
 }
-/* ng-view Fade effects, once ng-animate is in place. 
-
-.fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    opacity: 1;
-}
-.fade.ng-enter,
-.fade.ng-leave {
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-}
-.fade.ng-enter {
-    opacity: 0;
-}
-.fade.ng-enter-active {
-    opacity: 1;
-}
-.fade.ng-leave {
-    opacity: 1;
-}
-.fade.ng-leave-active {
-    opacity: 0;
-}
-*/

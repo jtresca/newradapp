@@ -1,25 +1,25 @@
-'use strict';
-
 angular.module('radAppApp')
-.factory('form_factory', ['$http', function ($http) {
-	console.log("form_factory.js invoked!");
-	var formobject;
-	 return {
-    getAllUsers : function() {
-    	console.log("from get: ", formobject);
-      	return formobject;
-    },
-    setAllUsers : function(param) {
-    console.log("I'm in set all users")
-    formobject = param;
-        if (formobject.score == undefined) {
-            formobject.score = 0;
+.factory('formFactory', [function () {
+    'use strict';
+    var ff = {};
+
+    ff.examStarted = false;
+
+    ff.getAllUsers = function() {
+        console.log('from get: ', ff);
+        return ff;
+    };
+
+    ff.setAllUsers = function(formFromExamForm) {
+    console.log('I am in set all users');
+    var fo = formFromExamForm;
+        if (fo.score === undefined) {
+            fo.score = 0;
         }
-        if (formobject.date == undefined) {
-            formobject.date = Date.now();
+        if (fo.date === undefined) {
+            fo.date = Date.now();
         }
-  		return formobject;
-    }, // setAllusers return
-    
-  } // Returned Factory Object
-}]);
+      return fo;
+    };
+    return ff;
+  }]);

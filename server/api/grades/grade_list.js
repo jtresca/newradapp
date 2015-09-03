@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var GradeSchema = new Schema({
- eval: Number,
+ evalu: Number,
  cat: String,
  subcat: String,
  rating: Array

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 var _ = require('lodash');
 var mongoose = require('mongoose');
 
@@ -8,7 +8,7 @@ var Results = mongoose.model('Results');
 
 exports.index = function(req, res) {
   Results.find(function (err, things) {
-    if(err) { return handleError(res, err); }
+    if(err) { throw err; }
     return res.json(200, things);
   });
 };

@@ -5,7 +5,7 @@ angular.module('radAppApp')
     $scope.user = {};
     $scope.errors = {};
 
-     console.log("LOGGEDIN: ", Auth.isLoggedIn());
+     console.log('LOGGEDIN: ', Auth.isLoggedIn());
 
     $scope.login = function(form) {
       $scope.submitted = true;

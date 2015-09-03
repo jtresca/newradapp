@@ -22,13 +22,13 @@ angular.module('radAppApp')
     $scope.isAdmin = Auth.isAdmin;
     
     $scope.logout = function() {
-      Auth.logout()
+      Auth.logout();
      $location.path('/login'); 
     };
     
     $scope.isActive = function(route) {
       var rootPath = $location.path();
-      var finalPath = rootPath.split("/")[1];
+      var finalPath = rootPath.split('/')[1];
       finalPath = '/' + finalPath;
       return route === finalPath;
 

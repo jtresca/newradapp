@@ -1,14 +1,16 @@
-'use strict';
-
 angular.module('radAppApp')
-  .controller('MainCtrl', ['$scope', '$http', '$location', 'form_factory', '$q', 'httpService',
-    function ($scope, $http, $location, form_factory, $q, httpService) {
+  .controller('MainCtrl', ['$scope', '$http', '$location', 'formFactory', '$q', 'httpService',
+    function ($scope, $http, $location, formFactory, $q, httpService) {
+        'use strict';
+        var ff = formFactory;
+        $scope.hasStarted = ff.examStarted;
+
       httpService.getStuff('/api/getExamList').success(function (result) {$scope.formArray = result;});
       httpService.getStuff('/api/users/me').success(function (result) {$scope.loggedDetails = result;});
       httpService.getStuff('/api/getGradeList').success(function (result) {
         $scope.GradeListResults = result;
         $scope.SortedGradeList = _.sortBy($scope.GradeListResults, function(it) {
-                    return it.eval;
+                    return it.evalu;
                 });
       });
             
@@ -32,7 +34,7 @@ angular.module('radAppApp')
                 $scope.form.pType = 'Adult';
                 $scope.form.gender = 'Male';
 
-            }
+            };
 
 
 
@@ -45,10 +47,10 @@ angular.module('radAppApp')
             };
             //BEGIN BUTTON
             $scope.formSubmit = function(form) {
-                console.log("formSubmit Button Pushed");
+                ff.examStarted = true;
+                console.log('formSubmit Button Pushed');
                 $scope.formdata = angular.copy(form);
-                form_factory.setAllUsers($scope.formdata);
-                console.log("form_factory.setAllUsers($scope.formdata): " + form_factory.setAllUsers($scope.formdata));
+                ff.setAllUsers($scope.formdata);
                 $location.path('exam/exam_1');
             };
 
@@ -57,8 +59,8 @@ angular.module('radAppApp')
             $scope.totalScoreSub = function() {
                 $scope.valSub = $scope.valAdd;
                 $scope.valSub -= $scope.studentScore[$scope.studentScore.length - 1];
-                console.log($scope.studentScore[$scope.studentScore.length - 1], "current SUBTRACT value i");
-                console.log($scope.valSub, "subtracted VALs");
+                console.log($scope.studentScore[$scope.studentScore.length - 1], 'current SUBTRACT value i');
+                console.log($scope.valSub, 'subtracted VALs');
                 $scope.valAdd = $scope.valSub;
             };
 
@@ -66,45 +68,38 @@ angular.module('radAppApp')
             $scope.totalScoreAdd = function() {
                 $scope.valAdd = 0;
                 for (var i = 0; i < $scope.studentScore.length; i++) {
-                    console.log("once for each time");
+                    console.log('once for each time');
                     $scope.valAdd += $scope.studentScore[i];
-                    console.log($scope.studentScore[i], "current ADD value i");
-                    console.log($scope.valAdd, "added VALs");
+                    console.log($scope.studentScore[i], 'current ADD value i');
+                    console.log($scope.valAdd, 'added VALs');
                 }
             };
 
             //DATA RETURNED FROM FACTORY
-            $scope.formreturn = form_factory.getAllUsers();
+            
+            $scope.formreturn = ff.fo;
+            $scope.form = ff.fo;
 
-            //PROMISE
 
-            var defer = $q.defer();
-
-            defer.promise.then(function() {
-                $scope.form = $scope.formreturn;
-            });
-
-            defer.resolve();
-
-            console.log($scope.itteration + 1, ":Question Number");
+            console.log($scope.itteration + 1, ':Question Number');
 
             $scope.nextBTN = function() {
 
-                console.log("THIS IS WHAT I HAVE SO FAR:", $scope.formreturn);
+                console.log('THIS IS WHAT I HAVE SO FAR:', $scope.formreturn);
 
-                if ($scope.wasHit == false) {
-                    console.log("please make a selection!");
-                } else if ($scope.itteration == $scope.SortedGradeList.length - 1) {
-                    console.log("last exam question!");
+                if ($scope.wasHit === false) {
+                    console.log('please make a selection!');
+                } else if ($scope.itteration === $scope.SortedGradeList.length - 1) {
+                    console.log('last exam question!');
                     $scope.idname = undefined; // removes highlight
                     $scope.studentScore.push($scope.scoreAddSub);
                     console.log($scope.studentScore);
 
-                $http.post("api/postStudentResults", $scope.formreturn)
-                    .success(function(data, status, headers, config) {
-                       console.log("DATA SAVED TO DB! MAKE SURE IT IS VALID")
-                }).error(function(data, status, headers, config) {
-                     console.log("error");
+                $http.post('api/postStudentResults', $scope.formreturn)
+                    .success(function() {
+                       console.log('DATA SAVED TO DB! MAKE SURE IT IS VALID');
+                }).error(function() {
+                     console.log('error with saving data to DB');
                 }); 
 
 
@@ -119,7 +114,7 @@ angular.module('radAppApp')
 
                     console.log($scope.studentScore);
                     // $scope.scoreAddSub = undefined;
-                    console.log($scope.itteration + 1, ":Question Number");
+                    console.log($scope.itteration + 1, ':Question Number');
                 }
             };
 
@@ -132,7 +127,7 @@ angular.module('radAppApp')
                     $scope.totalScoreSub();
                     $scope.studentScore.pop();
                     console.log($scope.studentScore);
-                    console.log($scope.itteration + 1, ":Question Number");
+                    console.log($scope.itteration + 1, ':Question Number');
                     if ($scope.studentScore < 0) {
                         $scope.studentScore = 0;
                     }

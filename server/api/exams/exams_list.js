@@ -26,4 +26,4 @@ var ExamsSchema = new Schema({
   });
 
 
-mongoose.model('Exams', ExamsSchema);
+module.exports = mongoose.model('Exams', ExamsSchema);
