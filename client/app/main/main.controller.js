@@ -1,26 +1,41 @@
 angular.module('radAppApp')
-  .controller('MainCtrl', ['$scope', '$http', '$location', 'formFactory', '$q', 'httpService',
-    function ($scope, $http, $location, formFactory, $q, httpService) {
+  .controller('MainCtrl', ['$scope', '$http', '$location', 'formFactory', 'examFactory',
+    function ($scope, $http, $location, formFactory, examFactory) {
         'use strict';
         var ff = formFactory;
         $scope.hasStarted = ff.examStarted;
+        var ef = examFactory;
 
-      httpService.getStuff('/api/getExamList').success(function (result) {$scope.formArray = result;});
-      httpService.getStuff('/api/users/me').success(function (result) {$scope.loggedDetails = result;});
-      httpService.getStuff('/api/getGradeList').success(function (result) {
-        $scope.GradeListResults = result;
-        $scope.SortedGradeList = _.sortBy($scope.GradeListResults, function(it) {
-                    return it.evalu;
-                });
+      //httpService.getStuff('/api/getExamList').success(function (result) {$scope.formArray = result;});
+      ef.getExamList().success(function (data) {
+        $scope.formArray = data;
       });
-            
+
+      //httpService.getStuff('/api/users/me').success(function (result) {$scope.loggedDetails = result;});
+      ef.getUsers().success(function (data) {
+        $scope.loggedDetails = data;
+      });
+      //httpService.getStuff('/api/getGradeList').success(function (result) {
+      ef.getGradeList().success(function (data) {
+          $scope.GradeListResults = data;
+          $scope.SortedGradeList = _.sortBy($scope.GradeListResults, function(it) {
+                      return it.evalu;
+                  });
+      });
+      //  $scope.GradeListResults = result;
+      //  $scope.SortedGradeList = _.sortBy($scope.GradeListResults, function(it) {
+      //              return it.evalu;
+      //          });
+      //});
+
 
     //FUNCTIONS
     $scope.itteration = 0;
     $scope.studentScore = [];
     $scope.wasHit = false;
     $scope.isDevMode = true;
-            
+
+            // For Development Only. Used to Fill up the Exam Form quickly
             $scope.preFillDemo = function() {
                 $scope.form = {};
                 $scope.form.fname = 'John';
@@ -29,7 +44,7 @@ angular.module('radAppApp')
                 $scope.form.exam = { 'procedure': 'Chest Routine'};
                 $scope.form.site = 'Brookhaven Memorial Hospital';
                 $scope.form.year = 'Junior';
-                $scope.form.mrn = 345235;
+                $scope.form.mrn = 123456;
                 $scope.form.compType = 'Initial';
                 $scope.form.pType = 'Adult';
                 $scope.form.gender = 'Male';
@@ -76,13 +91,15 @@ angular.module('radAppApp')
             };
 
             //DATA RETURNED FROM FACTORY
-            
+
             $scope.formreturn = ff.fo;
             $scope.form = ff.fo;
 
 
             console.log($scope.itteration + 1, ':Question Number');
 
+
+            // Next Exam Question once value Card is selected
             $scope.nextBTN = function() {
 
                 console.log('THIS IS WHAT I HAVE SO FAR:', $scope.formreturn);
@@ -100,7 +117,7 @@ angular.module('radAppApp')
                        console.log('DATA SAVED TO DB! MAKE SURE IT IS VALID');
                 }).error(function() {
                      console.log('error with saving data to DB');
-                }); 
+                });
 
 
                     $location.path('exam/'); //CHANGE THIS TO SUMMARY PAGE!!!
@@ -118,6 +135,8 @@ angular.module('radAppApp')
                 }
             };
 
+
+            // Previous Exam Question
             $scope.prevBTN = function() {
                 if ($scope.itteration === 0) {
                     $location.path('exam/');
