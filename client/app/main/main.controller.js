@@ -1,6 +1,6 @@
 angular.module('radAppApp')
-  .controller('MainCtrl', ['$scope', '$http', '$location', 'formFactory', 'examFactory',
-    function ($scope, $http, $location, formFactory, examFactory) {
+  .controller('MainCtrl', ['$scope', '$http', '$location', 'formFactory', 'examFactory', '$timeout',
+    function ($scope, $http, $location, formFactory, examFactory, $timeout) {
         'use strict';
         var ff = formFactory;
         $scope.hasStarted = ff.examStarted;
@@ -59,6 +59,9 @@ angular.module('radAppApp')
                 $scope.wasHit = true;
                 $scope.scoreAddSub = score;
                 $scope.idname = id;
+              $timeout(function () {
+                $scope.nextBTN();
+              }, 500);
             };
             //BEGIN BUTTON
             $scope.formSubmit = function(form) {
