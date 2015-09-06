@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('radAppApp')
-  .controller('NavbarCtrl',['$scope', '$location', 'Auth', function ($scope, $location, Auth) {
-    
+  .controller('NavbarCtrl',['$document','$scope', '$location', 'Auth', function ($document, $scope, $location, Auth) {
+
+    // temporary removed nav items
+    //{
+    //  'title': 'EXAM',
+    //  'link': '/exam'
+    //},
+    //{
+    //  'title': 'SETTINGS',
+    //  'link': '/settings'
+    //},
     $scope.menu = [
-      {
-        'title': 'EXAM',
-        'link': '/exam'
-      },
-      {
-        'title': 'SETTINGS',
-        'link': '/settings'
-      },
       {
         'title': 'LOGOUT',
         'link': '/logout'
@@ -20,12 +21,12 @@ angular.module('radAppApp')
 
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
-    
+
     $scope.logout = function() {
       Auth.logout();
-     $location.path('/login'); 
+     $location.path('/login');
     };
-    
+
     $scope.isActive = function(route) {
       var rootPath = $location.path();
       var finalPath = rootPath.split('/')[1];
@@ -33,7 +34,7 @@ angular.module('radAppApp')
       return route === finalPath;
 
     };
-    
+
   }]);
 
 
