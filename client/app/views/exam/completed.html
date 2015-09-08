@@ -1,12 +1,15 @@
 <div class="whitepaper-bg">
-  <p>The final look before restarting the exam</p>
-  <div class="jumbotron">
+  <div class="intro-text-hldr">
+    <h1 style="color:black;">Final Score: {{((completedExam.score / 44) * 100) | number:0}} %</h1>
+  </div>
+
+  <div class="">
     <p>{{completedExam.fname}}</p>
 
     <p>{{completedExam.lname}}</p>
 
-    <p>{{completedExam.score}}</p>
+    <p></p>
   </div>
 
-  <button class="btn btn-primary">New</button>
+  <button class="btn btn-lg btn-secondary" ng-click="beginNewExam()">New Exam</button>
 </div>
