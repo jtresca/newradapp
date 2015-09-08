@@ -23,12 +23,12 @@ Exams.find({}).remove(function() {
   date: Date.now(),
   semester: ["Q1","Q2","Q3","Q4"],
   year: ['Junior', 'Senior'],
-  exam: [ {procedure: 'Chest Routine', require: 'mandatory', region: 'thorax'}, 
+  exam: [ {procedure: 'Chest Routine', require: 'mandatory', region: 'thorax'},
       {procedure: 'Chest AP', require: 'mandatory', region: 'thorax'},
-      {procedure: 'Ribs', require: 'mandatory', region: 'thorax'}, 
-      {procedure: 'Chest Lateral Decubitus', require: 'elective', region: 'thorax'}, 
+      {procedure: 'Ribs', require: 'mandatory', region: 'thorax'},
+      {procedure: 'Chest Lateral Decubitus', require: 'elective', region: 'thorax'},
       {procedure: 'Sternum', require: 'elective', region: 'thorax'},
-      {procedure: 'Soft-Tissue Neck', require: 'elective', region: 'thorax'}, 
+      {procedure: 'Soft-Tissue Neck', require: 'elective', region: 'thorax'},
       {procedure: 'Finger', require: 'mandatory', region: 'thorax'},
       {procedure: 'Hand', require: 'mandatory', region: 'upper extremity'},
       {procedure: 'Wrist', require: 'mandatory', region: 'upper extremity'},
@@ -94,7 +94,7 @@ Exams.find({}).remove(function() {
   pType: ['Adult', 'Pediatric', 'Uncooperative', 'Stretcher', 'Wheelchair', 'Trauma'],
   compType: ['Initial', 'Terminal', 'Simulated'],
   gender: ['Male', 'Female']
-}, // end of compForm.js from dropbox 
+}, // end of compForm.js from dropbox
 function() {
       console.log('finished populating Exams');
     }
@@ -107,12 +107,12 @@ Category and button data for the exam portion. This is the default exam button c
 //Clear old things, then add things in
 Grades.find({}).remove(function() {
   Grades.create(
-  // Category: Radiation Protection 
+  // Category: Radiation Protection
   {
-    eval: 1,    
+    eval: 1,
     cat: 'Radiation Protection',
     subcat: 'SHIELDING',
-    rating: [ { desc: 'forgot to use or felt unnecessary to use', ratename: 'unsatisfactory', score: 0},
+    rating: [ { desc: 'forgot to use or felt unnecessary to use', ratename: 'unsatisfactory', score: 1},
               { desc: 'used but used improperly', ratename: 'marginal', score: 2},
               { desc: 'at expected level, but room for improvement', ratename: 'satisfactory', score: 3},
               { desc: 'shielding visible on image, but did not interfere with desired anatomy', ratename: 'outstanding', score: 4}]
@@ -121,17 +121,17 @@ Grades.find({}).remove(function() {
     eval: 2,
     cat: 'Radiation Protection',
     subcat: 'COLLIMATION',
-    rating: [ { desc: 'did not collimate', ratename: 'unsatisfactory', score: 0 },
+    rating: [ { desc: 'did not collimate', ratename: 'unsatisfactory', score: 1 },
               { desc: 'minimal evidence of collimation on image', ratename: 'marginal', score: 2 },
               { desc: 'evidence of two-sided collimation', ratename: 'satisfactory', score: 3 },
               { desc: 'evidence of four-sided collimation', ratename: 'outstanding', score: 4} ]
-    
+
   },// Eval 2
   {
     eval: 3,
     cat:'Radiation Protection',
     subcat: 'EXPOSURE FACTORS',
-    rating: [ { desc: 'lacks knowledge of the exposure index number, or guessed technique',ratename: 'unsatisfactory', score: 0},
+    rating: [ { desc: 'lacks knowledge of the exposure index number, or guessed technique',ratename: 'unsatisfactory', score: 1},
               { desc: 'diagnostically acceptable, but not optimal quality or needed prompting',ratename: 'marginal', score: 2},
               { desc: 'sufficient density and contrast, with acceptable index number',ratename: 'satisfactory', score: 3 },
               { desc: 'near perfect exposure index or determined optimum technique to achieve appropriate density and contrast', ratename: 'outstanding', score: 4}]
@@ -140,8 +140,8 @@ Grades.find({}).remove(function() {
     eval: 4,
     cat:'Radiation Protection',
     subcat: 'PREGNANCY DETERMINATION',
-    rating: [ 
-              { desc: 'did not ask patient if potentially pregnant', ratename: 'unsatisfactory', score: 0},
+    rating: [
+              { desc: 'did not ask patient if potentially pregnant', ratename: 'unsatisfactory', score: 1},
               // { desc: '', ratename: 'marginal', score: 2},
               // { desc: '', ratename: 'satisfactory', score: 3},
               { desc: 'asked patient if potentially pregnant', ratename: 'outstanding', score: 4}]
@@ -151,8 +151,8 @@ Grades.find({}).remove(function() {
     eval: 5,
     cat: 'Patient Care',
     subcat: 'PATIENT IDENTIFICATION',
-    rating: [ 
-              {desc: 'Did not verify patient\'s ID bracelet and D.O.B. before beginning exam', ratename: 'unsatisfactory', score: 0}, // Uses character escape instead of double quotes.
+    rating: [
+              {desc: 'Did not verify patient\'s ID bracelet and D.O.B. before beginning exam', ratename: 'unsatisfactory', score: 1}, // Uses character escape instead of double quotes.
               {desc: 'Patient was insufficiently identified by checking an alternate form of ID.', ratename: 'marginal', score: 2},
               {desc: 'Properly confirmed patient ID, but did not verify matching information to the examination screen', ratename: 'satisfactory', score: 3},
               {desc: 'Used all appropriate methods of identification without proctoring', ratename: 'outstanding', score: 4}]
@@ -162,7 +162,7 @@ Grades.find({}).remove(function() {
     cat: 'Patient Care',
     subcat:'COMMUNICATION WITH PATIENT / STAFF',
     rating: [
-              {desc: 'Did not introduce themselves and referred to the patient in an unprofessional manner or visibly impatient during patient interactions', ratename: 'unsatisfactory', score: 0},
+              {desc: 'Did not introduce themselves and referred to the patient in an unprofessional manner or visibly impatient during patient interactions', ratename: 'unsatisfactory', score: 1},
               {desc: 'Did not introduce themselves and provided poor explanation of the procedure',ratename: 'marginal', score: 2},
               {desc: 'Introduced themselves and provided a correct explanation of the procedure',ratename: 'satisfactory', score: 3},
               {desc: 'Introduced themselves and explained the procedure correctly in a manor in which could be fully understood by the patient',ratename: 'outstanding', score: 4}]
@@ -173,7 +173,7 @@ Grades.find({}).remove(function() {
     cat: 'Positioning',
     subcat: 'PATIENT / EQUIPMENT POSITIONING',
     rating: [
-              {desc: 'repeat required, or makes more than two positioning errors', ratename: 'unsatisfactory', score: 0},
+              {desc: 'repeat required, or makes more than two positioning errors', ratename: 'unsatisfactory', score: 1},
               {desc: 'Anatomy centered, but may be improperly rotated or improper SID or OID', ratename: 'marginal', score: 2},
               {desc: 'Acceptable positioning with little to no proctoring', ratename: 'satisfactory', score: 3},
               {desc: 'Textbook quality positioning without any errors or proctoring', ratename: 'outstanding', score: 4}]
@@ -182,8 +182,8 @@ Grades.find({}).remove(function() {
     eval: 8,
     cat: 'Positioning',
     subcat: 'EXAM PERFORMANCE AND LOGICAL THINKING',
-    rating: [ 
-            {desc: 'Unaware of positioning protocol, and no logical order in which exams were performed', ratename: 'unsatisfactory', score: 0},
+    rating: [
+            {desc: 'Unaware of positioning protocol, and no logical order in which exams were performed', ratename: 'unsatisfactory', score: 1},
             {desc: 'Moved and repositioned patient unnecessarily numerous times', ratename: 'marginal', score: 2},
             {desc: 'Logical approach used to sequentially order multiple views', ratename: 'satisfactory', score: 3},
             {desc: 'Optimal use of logical approach to complete the study without unnecessary repositioning', ratename: 'outstanding', score: 4}]
@@ -193,8 +193,8 @@ Grades.find({}).remove(function() {
     eval: 9,
     cat: 'Student Image Evaluation',
     subcat: 'POSITIONING IMAGE EVALUATION',
-    rating: [ 
-              {desc: 'Unable to assess for proper textbook quality', ratename: 'unsatisfactory', score: 0},
+    rating: [
+              {desc: 'Unable to assess for proper textbook quality', ratename: 'unsatisfactory', score: 1},
               {desc: 'Sometimes able to assess images for positioning quality, but requires proctoring', ratename: 'marginal', score: 2},
               {desc: 'Usually able to assess images for textbook quality with little or no proctoring',ratename: 'satisfactory', score: 3},
               {desc: 'Able to identify all anatomic parts correctly and demonstrates full understanding of how to determine the appropriate position was achieved',ratename: 'outstanding', score: 4}]
@@ -203,8 +203,8 @@ Grades.find({}).remove(function() {
     eval: 10,
     cat: 'Student Image Evaluation',
     subcat: 'ANATOMY IMAGE EVALUATION',
-    rating: [ 
-              {desc: 'Unable to identify anatomic structures and/or if anatomy was positioned properly', ratename: 'unsatisfactory', score: 0},
+    rating: [
+              {desc: 'Unable to identify anatomic structures and/or if anatomy was positioned properly', ratename: 'unsatisfactory', score: 1},
               {desc: 'Can identify some of the anatomy with some understanding of how an appropriate is achieved', ratename: 'marginal', score: 2},
               {desc: 'Able to identify most anatomical structures and demonstrates an understanding of the positioned part', ratename: 'satisfactory', score: 3},
               {desc: 'Correctly identifies all anatomical regions with full understanding how how the positioning relates to the image achieved', ratename: 'outstanding', score: 4}]
@@ -214,7 +214,7 @@ Grades.find({}).remove(function() {
     eval: 11,
     cat: 'Radiographer / CI / CC Image evaluation',
     subcat: 'MARKERS',
-    rating: [ {desc: 'No marker place upon the image receptor during time of exposure',ratename: 'unsatisfactory', score: 0},
+    rating: [ {desc: 'No marker place upon the image receptor during time of exposure',ratename: 'unsatisfactory', score: 1},
               {desc: 'The marker was placed, but was collimated off, or the marker obscures the desired anatomy',ratename: 'marginal', score: 2},
               {desc: 'The marker is vaguely visible due to partial collimation',ratename: 'satisfactory', score: 3},
               {desc: 'Properly placed and well visualized marker that does not obscure the desired anatomy', ratename: 'outstanding', score: 4}]
@@ -223,7 +223,7 @@ Grades.find({}).remove(function() {
     eval: 12,
     cat: 'Radiographer / CI / CC Image evaluation',
     subcat: 'CORRECTIVE ACTION',
-    rating: [ {desc: 'No concept of how to make corrections to properly perform the exam', ratename: 'unsatisfactory', score: 0},
+    rating: [ {desc: 'No concept of how to make corrections to properly perform the exam', ratename: 'unsatisfactory', score: 1},
               {desc: 'Proctoring is required to ensure proper corrective action', ratename: 'marginal', score: 2},
               {desc: 'Some direction needed, but overall proficient in corrective action', ratename: 'satisfactory', score: 3},
               {desc: 'Determined a logical solution and preformed corrective action without proctoring', ratename: 'outstanding', score: 4}]

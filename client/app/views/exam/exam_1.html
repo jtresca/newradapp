@@ -23,19 +23,22 @@
 					<div class="cat">{{SortedGradeList[itteration].cat}}</div><div class="midpointarrow"><div class="arrow-right"></div></div><div class="subcat">{{SortedGradeList[itteration].subcat}}</div>
 				</div>
 			</div>
+
+      <!--SCORE CARDS-->
+
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="rating in SortedGradeList[itteration].rating">
 					<div class="gradeoption" ng-click="examButtons(rating.ratename,rating.score)" ng-class="{gradehighlight : idname === rating.ratename }" >
-						
+
 						<div class="gradeoptiontext" >
 							{{rating.ratename}}<br>
 							<span class="largescore">{{rating.score}}</span><span>pts.</span>
 						</div>
-						
+
 						<div class="bottompointarrow">
 							<div class="arrow-down" ng-click="examButtons(rating.ratename)" ng-class="{highdownarrow : idname === rating.ratename }"></div>
 						</div>
-						
+
 						<div class="gradeoptiondesc">
 							{{rating.desc}}
 						</div>
@@ -45,8 +48,11 @@
 					<button class="btn btn-lg btn-back" ng-click="prevBTN()" ng-hide="isFirstExam()">BACK</button>
 					<button class="btn btn-lg btn-next" ng-click="nextBTN()">NEXT</button>
 				</div>
-				
+
 			</div>
+
+      <!--End Score Cards-->
+
 		</div>
 	</div>
 </div>
