@@ -116,7 +116,10 @@ angular.module('radAppApp')
                     console.log($scope.studentScore);
 
                 $http.post('api/postStudentResults', $scope.formreturn)
-                    .success(function() {
+                    .success(function(completedExam) {
+                      console.log(completedExam);
+                      ff.completedExam = completedExam;
+                    $location.path('/completed');
                        console.log('DATA SAVED TO DB! MAKE SURE IT IS VALID');
                 }).error(function() {
                      console.log('error with saving data to DB');

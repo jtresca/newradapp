@@ -37,8 +37,13 @@ angular.module('radAppApp', [
         controller: 'MainCtrl',
         authenticate: true
       })
+      .when('/completed', {
+        templateUrl: 'app/views/exam/completed.html',
+        controller: 'completedCtrl',
+        authenticate: true
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
 
     $locationProvider.html5Mode(true);

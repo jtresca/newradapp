@@ -6,14 +6,14 @@ var Results = require('./student_results.js');
 var Results = mongoose.model('Results');
 
 
-exports.index = function(req, res) {
+module.exports.index = function(req, res) {
   Results.find(function (err, things) {
     if(err) { throw err; }
     return res.json(200, things);
   });
 };
 
-exports.postStudentResults = function(req, res) {
+module.exports.postStudentResults = function(req, res) {
 
   Results.create(req.body, function (err, results) {
       if (!err) {
