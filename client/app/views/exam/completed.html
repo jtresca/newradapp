@@ -4,9 +4,9 @@
   </div>
 
   <div class="">
-    <p>{{completedExam.fname}}</p>
+    <p ng-if="passStatus">Congratulations, your student <strong>Passed</strong> the exam and is considered competent for this clinical examination.</p>
 
-    <p>{{completedExam.lname}}</p>
+    <p ng-if="!passStatus">Unfortunately the student did not score high enough to be considered competent in this examination. </p>
 
     <p></p>
   </div>
