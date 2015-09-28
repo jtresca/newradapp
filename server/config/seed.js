@@ -110,7 +110,7 @@ Grades.find({}).remove(function() {
   // Category: Radiation Protection
   {
     eval: 1,
-    cat: 'Radiation Protection',
+    cat: 'Rad Pro',
     subcat: 'SHIELDING',
     rating: [ { desc: 'forgot to use or felt unnecessary to use', ratename: 'unsatisfactory', score: 1},
               { desc: 'used but used improperly', ratename: 'marginal', score: 2},
@@ -119,7 +119,7 @@ Grades.find({}).remove(function() {
   }, // Eval 1
   {
     eval: 2,
-    cat: 'Radiation Protection',
+    cat: 'Rad Pro',
     subcat: 'COLLIMATION',
     rating: [ { desc: 'did not collimate', ratename: 'unsatisfactory', score: 1 },
               { desc: 'minimal evidence of collimation on image', ratename: 'marginal', score: 2 },
@@ -129,8 +129,8 @@ Grades.find({}).remove(function() {
   },// Eval 2
   {
     eval: 3,
-    cat:'Radiation Protection',
-    subcat: 'EXPOSURE FACTORS',
+    cat:'Rad Pro',
+    subcat: 'EXPOSURE',
     rating: [ { desc: 'lacks knowledge of the exposure index number, or guessed technique',ratename: 'unsatisfactory', score: 1},
               { desc: 'diagnostically acceptable, but not optimal quality or needed prompting',ratename: 'marginal', score: 2},
               { desc: 'sufficient density and contrast, with acceptable index number',ratename: 'satisfactory', score: 3 },
@@ -138,8 +138,8 @@ Grades.find({}).remove(function() {
   },// Eval 3
   {
     eval: 4,
-    cat:'Radiation Protection',
-    subcat: 'PREGNANCY DETERMINATION',
+    cat:'Rad Pro',
+    subcat: 'PREGNANCY',
     rating: [
               { desc: 'did not ask patient if potentially pregnant', ratename: 'unsatisfactory', score: 1},
               // { desc: '', ratename: 'marginal', score: 2},
@@ -150,7 +150,7 @@ Grades.find({}).remove(function() {
   {
     eval: 5,
     cat: 'Patient Care',
-    subcat: 'PATIENT IDENTIFICATION',
+    subcat: 'PATIENT ID',
     rating: [
               {desc: 'Did not verify patient\'s ID bracelet and D.O.B. before beginning exam', ratename: 'unsatisfactory', score: 1}, // Uses character escape instead of double quotes.
               {desc: 'Patient was insufficiently identified by checking an alternate form of ID.', ratename: 'marginal', score: 2},
@@ -160,7 +160,7 @@ Grades.find({}).remove(function() {
   {
     eval: 6,
     cat: 'Patient Care',
-    subcat:'COMMUNICATION WITH PATIENT / STAFF',
+    subcat:'COMMUNICATION',
     rating: [
               {desc: 'Did not introduce themselves and referred to the patient in an unprofessional manner or visibly impatient during patient interactions', ratename: 'unsatisfactory', score: 1},
               {desc: 'Did not introduce themselves and provided poor explanation of the procedure',ratename: 'marginal', score: 2},
@@ -171,7 +171,7 @@ Grades.find({}).remove(function() {
   {
     eval: 7,
     cat: 'Positioning',
-    subcat: 'PATIENT / EQUIPMENT POSITIONING',
+    subcat: 'POSITIONING',
     rating: [
               {desc: 'repeat required, or makes more than two positioning errors', ratename: 'unsatisfactory', score: 1},
               {desc: 'Anatomy centered, but may be improperly rotated or improper SID or OID', ratename: 'marginal', score: 2},
@@ -181,7 +181,7 @@ Grades.find({}).remove(function() {
   {
     eval: 8,
     cat: 'Positioning',
-    subcat: 'EXAM PERFORMANCE AND LOGICAL THINKING',
+    subcat: 'LOGICAL THINKING',
     rating: [
             {desc: 'Unaware of positioning protocol, and no logical order in which exams were performed', ratename: 'unsatisfactory', score: 1},
             {desc: 'Moved and repositioned patient unnecessarily numerous times', ratename: 'marginal', score: 2},
@@ -191,8 +191,8 @@ Grades.find({}).remove(function() {
   // Category: Student Image Evaluation Skills
   {
     eval: 9,
-    cat: 'Student Image Evaluation',
-    subcat: 'POSITIONING IMAGE EVALUATION',
+    cat: 'Image Evaluation',
+    subcat: 'IMAGE EVALUATION',
     rating: [
               {desc: 'Unable to assess for proper textbook quality', ratename: 'unsatisfactory', score: 1},
               {desc: 'Sometimes able to assess images for positioning quality, but requires proctoring', ratename: 'marginal', score: 2},
@@ -201,8 +201,8 @@ Grades.find({}).remove(function() {
   },// Eval 9
   {
     eval: 10,
-    cat: 'Student Image Evaluation',
-    subcat: 'ANATOMY IMAGE EVALUATION',
+    cat: 'Image Evaluation',
+    subcat: 'IMAGE EVALUATION',
     rating: [
               {desc: 'Unable to identify anatomic structures and/or if anatomy was positioned properly', ratename: 'unsatisfactory', score: 1},
               {desc: 'Can identify some of the anatomy with some understanding of how an appropriate is achieved', ratename: 'marginal', score: 2},
@@ -212,7 +212,7 @@ Grades.find({}).remove(function() {
   // Radiographer / CI / CC Image evaluation
   {
     eval: 11,
-    cat: 'Radiographer / CI / CC Image evaluation',
+    cat: 'Image evaluation',
     subcat: 'MARKERS',
     rating: [ {desc: 'No marker place upon the image receptor during time of exposure',ratename: 'unsatisfactory', score: 1},
               {desc: 'The marker was placed, but was collimated off, or the marker obscures the desired anatomy',ratename: 'marginal', score: 2},
@@ -221,7 +221,7 @@ Grades.find({}).remove(function() {
   },// Eval 11
   {
     eval: 12,
-    cat: 'Radiographer / CI / CC Image evaluation',
+    cat: 'Image evaluation',
     subcat: 'CORRECTIVE ACTION',
     rating: [ {desc: 'No concept of how to make corrections to properly perform the exam', ratename: 'unsatisfactory', score: 1},
               {desc: 'Proctoring is required to ensure proper corrective action', ratename: 'marginal', score: 2},
