@@ -1,16 +1,32 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<header class="header" ng-controller="NavbarCtrl">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div id="logo"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <ul class="modern-nav pull-right">
+
+           <!--<li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">LOGOUT</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
 <div class="whitepaper-bg">
   <div class="intro-text-hldr">
     <h1 style="color:black;">Final Score: {{((completedExam.score / 44) * 100) | number:0}} %</h1>
+    <div class="contianer">
+      <p ng-if="passStatus">Congratulations, your student <strong>Passed</strong> the exam and is considered competent for this clinical examination.</p>
+
+      <p ng-if="!passStatus">Unfortunately the student did not score high enough to be considered competent in this examination. </p>
+      <button class="btn btn-lg btn-secondary" ng-click="beginNewExam()">New Exam</button>
+      <button ng-controller="NavbarCtrl" class="btn btn-lg btn-secondary" ng-click="logout()">Log Out</button>
+    </div>
   </div>
 
-  <div class="">
-    <p ng-if="passStatus">Congratulations, your student <strong>Passed</strong> the exam and is considered competent for this clinical examination.</p>
 
-    <p ng-if="!passStatus">Unfortunately the student did not score high enough to be considered competent in this examination. </p>
 
-    <p></p>
-  </div>
 
-  <button class="btn btn-lg btn-secondary" ng-click="beginNewExam()">New Exam</button>
 </div>
